@@ -37,14 +37,15 @@ const criarBanco = async() => {
     produtos WHERE id = 2`)
     console.log(produtoEspecifico)
 
+
     //Situação real:
     //O Gerente da loja avisou que o preço do Notebook mudou
     //UPDATE (O 'U' do CRUD)
 
     await db.run(`
         UPDATE produtos -- ATUALIZE produtos
-        SET preco = 3200.00 -- DEFINA o preco para 3500.00
-            quantidade = 5 -- DEFINA a quantidade para 5
+        SET preco = 3200.00, -- DEFINA o preco para 3500.00
+            quantidade = 5 -- DEFINA a quantidade para 10
         WHERE id = 2 -- ONDE o id for igual a 2        
         `)
 
@@ -54,10 +55,7 @@ const criarBanco = async() => {
         WHERE id = 2
         `)
 
-    await db.run(`
-        DELETE FROM produtos
-        WHERE id = 3
-        `)
+    
 
 
     console.log("Preço do Notebook Atualizado")
